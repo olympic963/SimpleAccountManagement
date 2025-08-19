@@ -1,14 +1,8 @@
--- Create Database and Table for ManageAccount System
--- Tạo database và bảng từ đầu cho hệ thống quản lý tài khoản
-
--- Tạo database (nếu chưa có)
 CREATE DATABASE IF NOT EXISTS demo;
 USE demo;
 
--- Xóa bảng cũ nếu tồn tại
 DROP TABLE IF EXISTS users;
 
--- Tạo bảng users với đầy đủ các trường
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -22,14 +16,12 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- Tạo indexes để tối ưu hiệu suất
 CREATE INDEX idx_username ON users(username);
 CREATE INDEX idx_email ON users(email);
 CREATE INDEX idx_role ON users(role);
 CREATE INDEX idx_birth_date ON users(birth_date);
 CREATE INDEX idx_created_at ON users(created_at);
 
--- Thêm dữ liệu mẫu để test
 INSERT INTO users (name, email, phone_number, username, password, birth_date, role) VALUES 
 ('Admin User', 'admin@example.com', '0123456789', 'admin', 'admin123', '1990-01-01', 'admin'),
 ('John Doe', 'john@example.com', '0987654321', 'johndoe', 'password123', '1995-05-15', 'user'),
@@ -37,8 +29,6 @@ INSERT INTO users (name, email, phone_number, username, password, birth_date, ro
 ('Nguyễn Văn A', 'nguyenvana@gmail.com', '0901234567', 'nguyenvana', '123456', '1988-12-10', 'user'),
 ('Trần Thị B', 'tranthib@gmail.com', '0912345678', 'tranthib', '123456', '1993-03-25', 'user');
 
--- Kiểm tra bảng đã tạo thành công
 DESCRIBE users;
 
--- Hiển thị dữ liệu mẫu
 SELECT * FROM users; 
