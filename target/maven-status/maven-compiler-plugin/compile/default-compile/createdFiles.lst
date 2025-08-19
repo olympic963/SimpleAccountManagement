@@ -1,0 +1,5 @@
+com\mycompany\manageaccount\controller\UserServlet.class
+com\mycompany\manageaccount\dao\UserDAO.class
+com\mycompany\manageaccount\resources\JakartaEE11Resource.class
+com\mycompany\manageaccount\model\User.class
+com\mycompany\manageaccount\JakartaRestConfiguration.class
